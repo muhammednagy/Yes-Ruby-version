@@ -1,0 +1,10 @@
+exit_requested = false
+Kernel.trap( "INT" ) { exit_requested = true }
+if !ARGV[0].nil?
+	a = ARGV[0]
+else
+	a = 'y'
+end
+while !exit_requested
+	puts a
+end
